@@ -60,7 +60,7 @@ $this->title = 'Офферы';
             ],
 
             [
-                'class' => ActionColumn::className(),
+                'class' => 'yii\grid\ActionColumn', 'template' => '{update} {delete}',
                 'urlCreator' => function ($action, Offers $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                 }
