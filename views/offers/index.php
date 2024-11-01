@@ -29,6 +29,9 @@ $this->title = 'Офферы';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'pager' => ['class' => \yii\bootstrap5\LinkPager::class],
+        'options' => [
+            'class' => 'p-1 border bg-light text-dark',
+        ],
         'columns' => [
             [
                 'attribute' => 'id',
@@ -40,7 +43,7 @@ $this->title = 'Офферы';
                 'filterInputOptions' => [
                     'class'       => 'form-control',
                     'placeholder' => 'поиск..'
-                 ]
+                ]
             ],
             [
                 'attribute' => 'email',
@@ -48,7 +51,7 @@ $this->title = 'Офферы';
                 'filterInputOptions' => [
                     'class'       => 'form-control',
                     'placeholder' => 'поиск.. '
-                 ]
+                ]
             ],
             [
                 'attribute' => 'phone',
@@ -60,7 +63,8 @@ $this->title = 'Офферы';
             ],
 
             [
-                'class' => 'yii\grid\ActionColumn', 'template' => '{update} {delete}',
+                // 'class' => ActionColumn::className(),
+                'class' => ActionColumn::className(), 'template' => '{update} {delete}',
                 'urlCreator' => function ($action, Offers $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                 }
