@@ -15,7 +15,7 @@ use yii\widgets\LinkPager;
 use yii\widgets\Pjax;
 
 $this->title = 'Офферы';
-// $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="offers-index">
 
