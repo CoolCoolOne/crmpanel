@@ -13,17 +13,18 @@
 УСТАНОВКА НА ЛОКАЛЬНЫЙ СЕРВЕР
 ------------
 
-1 Нужна сборка (например xampp) с соблюдением требований как к basic yii2 (версия php и расширения php.ini)
-2 Клонируйте репозиторий 
-3 Выполните composer update в папке проекта
-4 создайте базу данных и заполните её (пример скрипта указан ниже)
-5 сконфигурируйте подключение к базе данных в config/db
-6 перейдите по ссылке http://'localhost'/web/index.php ('localhost' = как вы настроете)
+1 Нужна сборка (например xampp) с соблюдением требований как к basic yii2 (версия php и расширения php.ini) <br>
+2 Клонируйте репозиторий  <br>
+3 Выполните composer update в папке проекта <br>
+4 создайте базу данных и заполните её (пример скрипта указан ниже) <br>
+5 сконфигурируйте подключение к базе данных в config/db <br>
+6 перейдите по ссылке http://'localhost'/web/index.php ('localhost' = как вы настроете) <br>
 
 
 Код для SQL
 ------------
 CREATE TABLE crmpanel.offers (id INT(11) NOT NULL AUTO_INCREMENT , name VARCHAR(256) NOT NULL , email VARCHAR(256) NOT NULL , phone VARCHAR(15) NULL , date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (id)) ENGINE = InnoDB;
+
 ------------
 INSERT INTO offers (id, name, email, phone, date) VALUES (NULL, 'Заявка от компании', 'test@client.ru', +71234560102, current_timestamp());
 INSERT INTO offers (id, name, email, phone, date) VALUES (NULL, 'проблемы с чем-то', 'test@mail.ru', +71234590102, current_timestamp());
@@ -39,25 +40,33 @@ INSERT INTO offers (id, name, email, phone, date) VALUES (NULL, 'Песенки'
 INSERT INTO offers (id, name, email, phone, date) VALUES (NULL, 'Картинки', 'pictures@client.ru', +71234533302, current_timestamp());
 
 
+
+
 Архитектурные и функциональные решения
 ------------
 
-1 Использован шаблон yii2 basic
-2 Создана модель и CRUD модули с помощю Gii
-3 Настроена валидация с помощью yii2 библиотек и сторониих виджетов (для телефона)
-4 для фильрации и сортировки настроен gridwiev
-5 внешний вид сделан с помощью bootstrap, кастомные стили не понадобились
-6 большая часть операций реализована через ajax (yii2 Pjax)
-7 код не комментируется, кроме самодокументирования именами классов, переменных, методов
+1 Использован шаблон yii2 basic <br>
+2 Создана модель и CRUD модули с помощю Gii (доработаны в ручную) <br>
+3 Настроена валидация с помощью yii2 библиотек и сторониих виджетов (для телефона) <br>
+4 для фильрации и сортировки настроен gridwiev <br>
+5 внешний вид сделан с помощью bootstrap, кастомные стили не понадобились <br>
+6 большая часть операций реализована через ajax (yii2 Pjax) <br>
+7 код не комментируется, кроме самодокументирования именами классов, переменных, методов <br>
 
 Соображения по доработке
 ------------
 
-1 настроить htacess
-2 вынести фильтрацию на отдельную страницу
-3 сделать редактирование оффера при клике на всё поле
+1 настроить htacess <br>
+2 вынести фильтрацию на отдельную страницу <br>
+3 сделать редактирование оффера при клике на всё поле <br>
 
 
 
 Внешний вид
 ------------
+![image](https://github.com/user-attachments/assets/551d08c8-d791-4bca-a004-9270ee985c5b)
+<br>
+![image](https://github.com/user-attachments/assets/3882d79a-2345-42a1-a994-a8b846876784)
+<br>
+![image](https://github.com/user-attachments/assets/27a9350f-b2a2-402c-9242-537479a9d5db)
+
