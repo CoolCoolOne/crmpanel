@@ -36,11 +36,19 @@ $this->title = 'Офферы';
             ],
             [
                 'attribute' => 'name',
-                'filterOptions' => ['style' => 'background-color: #198754']
+                'filterOptions' => ['style' => 'background-color: #198754'],
+                'filterInputOptions' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'поиск..'
+                 ]
             ],
             [
                 'attribute' => 'email',
                 'filterOptions' => ['style' => 'background-color: #198754'],
+                'filterInputOptions' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'поиск.. '
+                 ]
             ],
             [
                 'attribute' => 'phone',
