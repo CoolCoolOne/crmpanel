@@ -43,15 +43,9 @@ class OffersController extends Controller
         $searchModel = new OffersSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
-        // $pagination = new Pagination([
-        //     'defaultPageSize' => 10,
-        //     'totalCount' => $dataProvider->count(),
-        // ]);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            // 'pagination' => $pagination,
         ]);
     }
 

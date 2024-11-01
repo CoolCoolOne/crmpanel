@@ -32,6 +32,7 @@ class Offers extends \yii\db\ActiveRecord
         return [
             [['name', 'email'], 'required'],
             ['email', 'email'],
+            ['email','unique'],
             ['phone', PhoneValidator::class],
             [['date'], 'safe'],
             [['name', 'email'], 'string', 'max' => 256],

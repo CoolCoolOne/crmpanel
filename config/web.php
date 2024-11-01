@@ -4,7 +4,9 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => 'offersId',
+    'name'=>'CRM панель',
+    'defaultRoute' => 'offers',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -12,6 +14,11 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'language' => 'ru-RU',
+    'container' => [
+        'definitions' => [
+            'yii\data\Pagination' => ['defaultPageSize' => 10],
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

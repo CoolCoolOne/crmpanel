@@ -12,32 +12,45 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 use yii\widgets\LinkPager;
+use yii\widgets\Pjax;
 
 $this->title = 'Офферы';
-$this->params['breadcrumbs'][] = $this->title;
+// $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="offers-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Создать оффер', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
     ?>
-
+    <?php Pjax::begin(); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'pager' => ['class' => \yii\bootstrap5\LinkPager::class],
         'columns' => [
-            // ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'id',
+                'filter' => false,
+            ],
+            [
+                'attribute' => 'name',
+                'filterOptions' => ['style' => 'background-color: #198754']
+            ],
+            [
+                'attribute' => 'email',
+                'filterOptions' => ['style' => 'background-color: #198754'],
+            ],
+            [
+                'attribute' => 'phone',
+                'filter' => false
+            ],
+            [
+                'attribute' => 'date',
+                'filter' => false
+            ],
 
-            'id',
-            'name',
-            'email:email',
-            'phone',
-            'date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Offers $model, $key, $index, $column) {
@@ -46,16 +59,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
-
-    <?= LinkPager::widget([
-
-        'pagination' => $pagination,
-        'maxButtonCount' => 5,
-        'activePageCssClass' => 'active',
-        'linkContainerOptions' => ['class' => 'page-item'],
-        'linkOptions' => ['class' => 'page-link'],
-        'disabledListItemSubTagOptions' => ['tag' => 'a', 'class' => 'page-link'],
-    ]) ?>
-
+    <?php Pjax::end(); ?>
 
 </div>

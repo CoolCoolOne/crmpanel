@@ -46,9 +46,7 @@ class OffersSearch extends Offers
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'pageSize' => 1,
-            ],
+            'sort' => ['attributes' => ['id','name']],
         ]);
 
         $this->load($params);
