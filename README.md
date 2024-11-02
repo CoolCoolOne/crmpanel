@@ -1,9 +1,6 @@
 <p align="center">
     <h1 align="center">CRM-панель демо-проект</h1> <br>
     <h4 align="center">Проект на хостинге (если не удалил): http://developground.ru/web/index.php</h4>
-   
-    
-    <br>
 </p>
 
 Тестовое задание. Задача: разработать мини-приложение для управления офферами.
